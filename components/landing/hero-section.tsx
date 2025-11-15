@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, QrCode } from "lucide-react"
 
 export function HeroSection() {
   return (
@@ -28,10 +28,11 @@ export function HeroSection() {
                 Start Now <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
-                href="#features"
-               // className="px-8 py-3 border-2 border-emerald-200 text-emerald-700 rounded-full hover:bg-emerald-50 transition-colors font-medium"
+                href="/consumer"
+                className="px-8 py-3 border-2 border-emerald-200 text-emerald-700 rounded-full hover:bg-emerald-50 transition-colors font-medium flex items-center justify-center gap-2"
               >
-                
+                <QrCode className="w-5 h-5" />
+                Scan QR Code
               </Link>
             </div>
           </div>

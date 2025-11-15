@@ -5,6 +5,7 @@ import { CropFlowChart } from "./crop-flow-chart"
 import { CheckpointMap } from "./checkpoint-map"
 import { PriceMovement } from "./price-movement"
 import { QualityGrades } from "./quality-grades"
+import { CertificateAddition } from "./certificate-addition"
 
 export function DashboardContent() {
   return (
@@ -24,6 +25,9 @@ export function DashboardContent() {
           <QualityGrades />
         </div>
       </div>
+
+      {/* Certificate Addition */}
+      <CertificateAddition />
 
       {/* Analytics Row */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
