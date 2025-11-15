@@ -67,6 +67,21 @@ export default function AuthLoginPage() {
               </div>
             </div>
           </Link>
+
+          {/* Consumer */}
+          <Link href="/auth/consumer-login" className="block">
+            <div className="p-6 border-2 border-gray-200 rounded-2xl hover:border-purple-500 hover:shadow-lg transition-all group cursor-pointer">
+              <div className="flex items-start justify-between">
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-purple-600 transition-colors">
+                    Consumer Login
+                  </h3>
+                  <p className="text-gray-600 mt-1">Buy fresh, verified produce with complete traceability</p>
+                </div>
+                <div className="text-2xl">🛒</div>
+              </div>
+            </div>
+          </Link>
         </div>
 
         <div className="mt-8 text-center text-sm text-gray-600">

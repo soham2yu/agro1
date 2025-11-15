@@ -10,8 +10,8 @@ export function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div>
-            <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Farm to Table,{" "}
+            <h1 className="text-6xl sm:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+              Farm to Fork{" "}
               <span className="bg-gradient-to-r from-emerald-500 to-green-600 bg-clip-text text-transparent">
                 Completely Transparent
               </span>
@@ -29,9 +29,9 @@ export function HeroSection() {
               </Link>
               <Link
                 href="#features"
-                className="px-8 py-3 border-2 border-emerald-200 text-emerald-700 rounded-full hover:bg-emerald-50 transition-colors font-medium"
+               // className="px-8 py-3 border-2 border-emerald-200 text-emerald-700 rounded-full hover:bg-emerald-50 transition-colors font-medium"
               >
-                Scan Qr
+                
               </Link>
             </div>
           </div>

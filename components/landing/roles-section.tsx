@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Sprout, Store, Navigation, ArrowRight } from "lucide-react"
+import { Sprout, Store, Navigation, ShoppingCart, ArrowRight } from "lucide-react"
 
 export function RolesSection() {
   const roles = [
@@ -29,6 +29,14 @@ export function RolesSection() {
       link: "/auth/checkpoint-login",
       color: "from-blue-500 to-cyan-600",
     },
+    {
+      icon: <ShoppingCart className="w-12 h-12" />,
+      title: "For Consumers",
+      description: "Scan QR codes to access detailed crop information, verify authenticity, and track farm-to-table journey.",
+      features: ["QR code scanning", "Product traceability", "Quality verification", "Nutritional info"],
+      link: "/auth/consumer-login",
+      color: "from-purple-500 to-pink-600",
+    },
   ]
 
   return (
@@ -39,7 +47,7 @@ export function RolesSection() {
           <p className="text-xl text-gray-600">Tailored solutions for farmers, retailers, and logistics partners</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {roles.map((role, index) => (
             <div
               key={index}

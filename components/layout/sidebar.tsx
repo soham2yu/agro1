@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { LayoutDashboard, Users, MapPin, Truck, Store, BarChart3, Settings } from "lucide-react"
+import { LayoutDashboard, Users, MapPin, Truck, Store, BarChart3, Settings, QrCode } from "lucide-react"
 
 export function Sidebar() {
   const pathname = usePathname()
@@ -20,7 +20,7 @@ export function Sidebar() {
     if (userRole === "farmer") {
       return [
         ...baseItems,
-        { href: "/farmers", label: "My Crops", icon: Users },
+        { href: "/farmers", label: "Networks", icon: Users },
         { href: "/checkpoints", label: "Checkpoints", icon: MapPin },
       ]
     } else if (userRole === "retailer") {
@@ -36,6 +36,14 @@ export function Sidebar() {
         { href: "/checkpoints", label: "Checkpoints", icon: MapPin },
         { href: "/logistics", label: "Logistics", icon: Truck },
         { href: "/analytics", label: "Tracking", icon: BarChart3 },
+      ]
+    } else if (userRole === "consumer") {
+      return [
+        ...baseItems,
+        { href: "/consumer", label: "QR Scanner", icon: QrCode },
+        { href: "/farmers", label: "Suppliers", icon: Users },
+        { href: "/retailers", label: "Orders", icon: Store },
+        { href: "/logistics", label: "Tracking", icon: Truck },
       ]
     }
 

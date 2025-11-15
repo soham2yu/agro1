@@ -7,7 +7,7 @@ export function BenefitsSection() {
     "Reduce fraud with blockchain verification",
     "Increase shelf life with real-time monitoring",
     "Boost farmer income by 30-40%",
-    "Decrease delivery time by up to 50%",
+    "Decrease delivery time by up to 20-30%",
     "Access AI-powered market analytics",
     "Secure transactions with smart contracts",
   ]
@@ -20,7 +20,7 @@ export function BenefitsSection() {
           <div className="relative h-96 lg:h-full">
             <div className="absolute inset-0 bg-gradient-to-br from-emerald-100 to-green-100 rounded-3xl" />
             <img
-              src="/blockchain-verified-agriculture-supply-chain-with-.jpg"
+              src="FARMER.png"
               alt="Benefits"
               className="relative h-full w-full object-cover rounded-3xl"
             />
