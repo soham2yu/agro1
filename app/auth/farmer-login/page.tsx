@@ -37,11 +37,9 @@ export default function FarmerLoginPage() {
         {/* Header */}
         <div className="text-center mb-8">
           <Link href="/" className="flex items-center justify-center gap-2 mb-6">
-            <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-emerald-500 to-green-600 rounded-lg">
-              <Leaf className="w-7 h-7 text-white" />
-            </div>
+            <img src="/1.jpg" alt="AgroLink Logo" className="w-12 h-12 rounded-lg" />
             <span className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text text-transparent">
-              AgroLink X
+              AgroLink
             </span>
           </Link>
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Farmer Login</h1>

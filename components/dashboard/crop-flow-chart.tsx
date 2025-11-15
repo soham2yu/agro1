@@ -7,8 +7,12 @@ export function CropFlowChart() {
         <h2 className="text-lg font-bold text-text">Crop Flow Trends</h2>
       </div>
       <div className="card-body">
-        <div className="w-full h-64 bg-surface-secondary rounded-lg flex items-center justify-center border border-dashed border-border">
-          <p className="text-text-secondary">Chart placeholder</p>
+        <div className="w-full h-64 rounded-lg overflow-hidden">
+          <img
+            src="/land.png"
+            alt="Crop Flow Trends"
+            className="w-full h-full object-cover"
+          />
         </div>
 
         <div className="grid grid-cols-2 gap-4 mt-4">

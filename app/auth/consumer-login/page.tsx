@@ -37,9 +37,7 @@ export default function ConsumerLoginPage() {
         {/* Header */}
         <div className="text-center mb-8">
           <Link href="/" className="flex items-center justify-center gap-2 mb-6">
-            <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg">
-              <ShoppingCart className="w-7 h-7 text-white" />
-            </div>
+            <img src="/1.jpg" alt="AgroLink Logo" className="w-12 h-12 rounded-lg" />
             <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
               AgroLink
             </span>

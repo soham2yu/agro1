@@ -45,24 +45,12 @@ export function LandingHeader() {
 
           {/* Auth Buttons */}
           <div className="flex items-center gap-4">
-            {isAuthenticated ? (
-              <Link
-                href="/dashboard"
-                className="px-6 py-2 bg-gradient-to-r from-emerald-500 to-green-600 text-white rounded-full hover:shadow-lg hover:shadow-emerald-500/30 transition-all"
-              >
-                Dashboard
-              </Link>
-            ) : (
-              <>
-                <button className="text-gray-700 hover:text-emerald-600 transition-colors font-medium">Sign In</button>
-                <Link
-                  href="/auth/login"
-                  className="px-6 py-2 bg-gradient-to-r from-emerald-500 to-green-600 text-white rounded-full hover:shadow-lg hover:shadow-emerald-500/30 transition-all"
-                >
-                  Get Started
-                </Link>
-              </>
-            )}
+            <Link
+              href="/auth/login"
+              className="px-6 py-2 bg-gradient-to-r from-emerald-500 to-green-600 text-white rounded-full hover:shadow-lg hover:shadow-emerald-500/30 transition-all"
+            >
+              Sign In
+            </Link>
           </div>
         </div>
       </div>

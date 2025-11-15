@@ -9,10 +9,8 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="flex items-center justify-center w-8 h-8 bg-gradient-to-br from-emerald-500 to-green-600 rounded-lg">
-                <Leaf className="w-5 h-5 text-white" />
-              </div>
-              <span className="font-bold text-gray-900">AgroLink X</span>
+              <img src="/1.jpg" alt="AgroLink Logo" className="w-8 h-8 rounded-lg" />
+              <span className="font-bold text-gray-900">AgroLink</span>
             </div>
             <p className="text-sm text-gray-600">
               Connecting farmers, retailers, and logistics on a transparent, blockchain-verified platform.
@@ -163,7 +161,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-gray-200 pt-8 text-center text-sm text-gray-600">
-          <p>&copy; 2025 AgroLink X. All rights reserved.</p>
+          <p>&copy; 2025 AgroLink. All rights reserved.</p>
         </div>
       </div>
     </footer>

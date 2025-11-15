@@ -7,6 +7,7 @@ import { Search, Bell, User, LogOut } from "lucide-react"
 export function Header() {
   const router = useRouter()
   const [showUserMenu, setShowUserMenu] = useState(false)
+  const [searchQuery, setSearchQuery] = useState("")
 
   const handleLogout = () => {
     localStorage.removeItem("userRole")
@@ -15,23 +16,38 @@ export function Header() {
     router.push("/")
   }
 
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (searchQuery.trim()) {
+      // In a real app, this would trigger a search
+      console.log("Searching for:", searchQuery)
+      // You could navigate to a search results page or filter data
+    }
+  }
+
   return (
     <header className="bg-surface border-b border-border h-20 fixed top-0 right-0 left-0 z-40 flex items-center justify-between px-6">
       <div className="flex items-center gap-4">
         <div className="flex items-center gap-2 ml-64">
-          <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold">A</span>
-          </div>
+          <img src="/1.jpg" alt="AgroLink Logo" className="w-8 h-8 rounded-lg" />
           <h1 className="text-xl font-bold text-text">AgroLink </h1>
         </div>
       </div>
 
       <div className="flex items-center gap-6">
         {/* Search Bar */}
-        <div className="relative hidden md:block">
-          <input type="text" placeholder="Search farms, retailers..." className="input-field w-64" />
-          <Search size={18} className="absolute right-3 top-2.5 text-text-secondary" />
-        </div>
+        <form onSubmit={handleSearch} className="relative hidden md:block">
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="Search farms, retailers..."
+            className="input-field w-64"
+          />
+          <button type="submit" className="absolute right-3 top-2.5 text-text-secondary hover:text-primary transition-colors" title="Search">
+            <Search size={18} />
+          </button>
+        </form>
 
         {/* Notifications */}
         <button className="relative text-text-secondary hover:text-primary transition-colors" title="Notifications">
