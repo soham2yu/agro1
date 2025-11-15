@@ -1,11 +1,11 @@
-# 🚜 AgroLink – AI + Blockchain Powered Transparent Agricultural Supply Chain
+#  AgroLink – AI + Blockchain Powered Transparent Agricultural Supply Chain
 
 AgroLink is a next-generation platform designed to bring **trust, transparency, and fairness** to India’s agricultural supply chain.  
 Using **AI-powered crop quality grading** and **blockchain-backed certificates**, AgroLink eliminates fraud, middlemen manipulation, and payment delays — ensuring farmers receive fair prices and buyers get verified, high-quality produce.
 
 ---
 
-## 🌾 Problem Statement
+##  Problem Statement
 
 India’s agricultural supply chain suffers from:
 - Low transparency  
@@ -18,7 +18,7 @@ There is **no unified platform** that provides **verified crop data + transparen
 
 ---
 
-## 💡 Solution Overview
+##  Solution Overview
 
 A unified platform that enables:
 - **AI-Based Crop Grading** — Farmers upload crop images → AI detects grade (A/B/C) and quality parameters.  
@@ -28,7 +28,7 @@ A unified platform that enables:
 
 ---
 
-## 🛠️ Tech Stack (Suggested)
+##  Tech Stack (Suggested)
 
 **Frontend:** Next.js, Tailwind CSS, TypeScript  
 **Backend:** Node.js / Express (or Next.js API Routes)  
@@ -38,7 +38,7 @@ A unified platform that enables:
 
 ---
 
-## 🔑 Core Features (MVP)
+## Core Features (MVP)
 - AI-based crop quality detection  
 - Auto-generated blockchain certificate (hash + metadata)  
 - QR code verification portal for buyers  
@@ -47,7 +47,7 @@ A unified platform that enables:
 
 ---
 
-## 🚀 Workflow
+##  Workflow
 
 1. Farmer uploads crop photo.  
 2. AI model grades crop (A/B/C) and generates metadata.  
@@ -57,4 +57,5 @@ A unified platform that enables:
 
 ---
 
-## 📂 Project Structure (example)
+##  Project Structure (example)
+
