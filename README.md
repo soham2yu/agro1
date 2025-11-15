@@ -59,3 +59,31 @@ A unified platform that enables:
 
 ##  Project Structure (example)
 
+app/
+ ┣ components/
+ ┃ ┣ analytics/
+ ┃ ┃ ┣ analytics-content.tsx
+ ┃ ┃ ┣ crop-distribution.tsx
+ ┃ ┃ ┣ farmer-growth.tsx
+ ┃ ┃ ┣ market-demand-trends.tsx
+ ┃ ┃ ┣ predicted-yield.tsx
+ ┃ ┃ ┣ revenue-trends.tsx
+ ┃ ┃ ┗ supply-chain-health.tsx
+ ┃ ┣ checkpoints/
+ ┃ ┣ dashboard/
+ ┃ ┣ farmers/
+ ┃ ┣ landing/
+ ┃ ┣ layout/
+ ┃ ┣ logistics/
+ ┃ ┣ retailers/
+ ┃ ┗ ui/
+ ┃    ┗ theme-provider.tsx
+ ┣ hooks/
+ ┣ lib/
+ ┣ public/
+ ┣ styles/
+ ┣ next.config.mjs
+ ┣ package.json
+ ┗ pnpm-lock.yaml
+
+
