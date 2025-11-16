@@ -1,57 +1,12 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import { Thermometer, Scale, Activity, AlertCircle } from "lucide-react"
+import { apiGet } from "@/lib/api"
 
 interface CheckpointListProps {
   onVerify: (checkpoint: any) => void
 }
-
-const checkpointData = [
-  {
-    id: 1,
-    name: "Checkpoint Alpha",
-    region: "Punjab",
-    status: "active",
-    temperature: "22.5°C",
-    weight: "2,450 kg",
-    qualityReading: "8.7/10",
-    batchesProcessed: 147,
-    lastVerified: "2 hours ago",
-  },
-  {
-    id: 2,
-    name: "Checkpoint Beta",
-    region: "Haryana",
-    status: "processing",
-    temperature: "24.1°C",
-    weight: "1,890 kg",
-    qualityReading: "8.2/10",
-    batchesProcessed: 89,
-    lastVerified: "15 minutes ago",
-  },
-  {
-    id: 3,
-    name: "Checkpoint Gamma",
-    region: "Uttar Pradesh",
-    status: "active",
-    temperature: "21.8°C",
-    weight: "3,120 kg",
-    qualityReading: "9.1/10",
-    batchesProcessed: 203,
-    lastVerified: "1 hour ago",
-  },
-  {
-    id: 4,
-    name: "Checkpoint Delta",
-    region: "Maharashtra",
-    status: "warning",
-    temperature: "28.3°C",
-    weight: "1,650 kg",
-    qualityReading: "7.4/10",
-    batchesProcessed: 56,
-    lastVerified: "45 minutes ago",
-  },
-]
 
 function getStatusBadge(status: string) {
   switch (status) {
@@ -67,6 +22,14 @@ function getStatusBadge(status: string) {
 }
 
 export function CheckpointList({ onVerify }: CheckpointListProps) {
+  const [checkpointData, setCheckpointData] = useState<any[]>([]);
+
+  useEffect(() => {
+    apiGet("/api/checkpoints/list", true).then((data) => {
+      setCheckpointData(Array.isArray(data) ? data : []);
+    });
+  }, []);
+
   return (
     <div className="grid gap-6">
       {checkpointData.map((checkpoint) => (

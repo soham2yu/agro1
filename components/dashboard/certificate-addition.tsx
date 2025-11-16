@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { FileText, Upload, CheckCircle, AlertCircle } from "lucide-react"
+import { apiPost } from "@/lib/api"
 
 export function CertificateAddition() {
   const [certificateNumber, setCertificateNumber] = useState("")
@@ -24,17 +25,16 @@ export function CertificateAddition() {
     setIsSubmitting(true)
 
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000))
+      const formData = new FormData()
+      formData.append('certificateNumber', certificateNumber)
+      formData.append('issueDate', issueDate)
+      formData.append('expiryDate', expiryDate)
+      formData.append('certificateType', certificateType)
+      if (uploadedFile) {
+        formData.append('certificate', uploadedFile)
+      }
 
-      // In a real app, this would upload the certificate to the backend
-      console.log("Certificate submitted:", {
-        certificateNumber,
-        issueDate,
-        expiryDate,
-        certificateType,
-        fileName: uploadedFile?.name
-      })
+      await apiPost("/api/certificates", formData, true)
 
       setSubmitStatus("success")
       // Reset form
@@ -44,6 +44,7 @@ export function CertificateAddition() {
       setCertificateType("")
       setUploadedFile(null)
     } catch (error) {
+      console.error("Error submitting certificate:", error)
       setSubmitStatus("error")
     } finally {
       setIsSubmitting(false)

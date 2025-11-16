@@ -8,12 +8,12 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 export const metadata = {
   title: "AgroLink X - Farm to Table Supply Chain",
   description: "Smart agricultural data and supply chain platform with blockchain traceability",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    userScalable: true,
-  },
-    generator: 'v0.app'
+}
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  userScalable: true,
 }
 
 export default function RootLayout({

@@ -6,10 +6,11 @@ import { RolesSection } from "@/components/landing/roles-section"
 import { BenefitsSection } from "@/components/landing/benefits-section"
 import { CTASection } from "@/components/landing/cta-section"
 import { Footer } from "@/components/landing/footer"
+import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision"
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-emerald-50 to-white">
+    <BackgroundBeamsWithCollision className="min-h-screen bg-gradient-to-br from-white via-emerald-50 to-white">
       <LandingHeader />
       <HeroSection />
       <FeaturesSection />
@@ -17,6 +18,6 @@ export default function LandingPage() {
       <BenefitsSection />
       <CTASection />
       <Footer />
-    </div>
+    </BackgroundBeamsWithCollision>
   )
 }

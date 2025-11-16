@@ -1,6 +1,8 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import { CheckCircle, AlertCircle, XCircle, MoreVertical } from "lucide-react"
+import { apiGet } from "@/lib/api"
 
 interface FarmerTableProps {
   filters: {
@@ -10,59 +12,6 @@ interface FarmerTableProps {
     search: string
   }
 }
-
-const farmerData = [
-  {
-    id: 1,
-    name: "Rajesh Kumar",
-    region: "Punjab",
-    crop: "Wheat",
-    verification: "verified",
-    yield: "45.2 MT",
-    farmSize: "12 acres",
-    contact: "+91 98765 43210",
-  },
-  {
-    id: 2,
-    name: "Priya Singh",
-    region: "Haryana",
-    crop: "Rice",
-    verification: "verified",
-    yield: "38.5 MT",
-    farmSize: "8.5 acres",
-    contact: "+91 87654 32109",
-  },
-  {
-    id: 3,
-    name: "Amit Patel",
-    region: "Uttar Pradesh",
-    crop: "Corn",
-    verification: "pending",
-    yield: "52.1 MT",
-    farmSize: "15 acres",
-    contact: "+91 76543 21098",
-  },
-  {
-    id: 4,
-    name: "Deepak Sharma",
-    region: "Maharashtra",
-    crop: "Cotton",
-    verification: "verified",
-    yield: "28.7 MT",
-    farmSize: "20 acres",
-    contact: "+91 65432 10987",
-  },
-  {
-    id: 5,
-    name: "Harjeet Kaur",
-    region: "Punjab",
-    crop: "Wheat",
-    verification: "rejected",
-    yield: "41.3 MT",
-    farmSize: "10 acres",
-    contact: "+91 54321 09876",
-  },
-]
 
 function getVerificationBadge(status: string) {
   switch (status) {
@@ -93,7 +42,16 @@ function getVerificationBadge(status: string) {
 }
 
 export function FarmerTable({ filters }: FarmerTableProps) {
-  const filteredData = farmerData.filter((farmer) => {
+  const [farmerData, setFarmerData] = useState([]);
+
+  useEffect(() => {
+    apiGet("/api/retailers/farmers", true).then((data) => {
+      setFarmerData(Array.isArray(data) ? data : []);
+    });
+  }, []);
+
+  const safeFarmers = Array.isArray(farmerData) ? farmerData : [];
+  const filteredData = safeFarmers.filter((farmer) => {
     if (filters.search && !farmer.name.toLowerCase().includes(filters.search.toLowerCase())) return false
     if (filters.region && farmer.region.toLowerCase() !== filters.region.toLowerCase()) return false
     if (filters.crop && farmer.crop.toLowerCase() !== filters.crop.toLowerCase()) return false

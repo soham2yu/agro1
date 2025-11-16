@@ -1,67 +1,22 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import { MapPin, Phone, Mail, ShoppingCart, TrendingUp } from "lucide-react"
+import { apiGet } from "@/lib/api"
 
 interface RetailerListProps {
   onViewTransactions: (retailer: any) => void
 }
 
-const retailerData = [
-  {
-    id: 1,
-    name: "Fresh Mart Delhi",
-    location: "New Delhi",
-    email: "admin@freshmart.in",
-    phone: "+91 98765 43210",
-    verified: true,
-    totalPurchases: 847,
-    purchaseValue: "₹4,235,600",
-    totalTransactions: 156,
-    escrowBalance: "₹342,500",
-    status: "active",
-  },
-  {
-    id: 2,
-    name: "Green Valley Retail",
-    location: "Mumbai",
-    email: "contact@greenvalley.in",
-    phone: "+91 87654 32109",
-    verified: true,
-    totalPurchases: 623,
-    purchaseValue: "₹3,118,400",
-    totalTransactions: 112,
-    escrowBalance: "₹278,900",
-    status: "active",
-  },
-  {
-    id: 3,
-    name: "Agriculture Plus",
-    location: "Bangalore",
-    email: "sales@agriplus.com",
-    phone: "+91 76543 21098",
-    verified: true,
-    totalPurchases: 432,
-    purchaseValue: "₹2,159,800",
-    totalTransactions: 89,
-    escrowBalance: "₹185,600",
-    status: "active",
-  },
-  {
-    id: 4,
-    name: "Quality Foods India",
-    location: "Kolkata",
-    email: "info@qualityfoods.in",
-    phone: "+91 65432 10987",
-    verified: false,
-    totalPurchases: 156,
-    purchaseValue: "₹892,400",
-    totalTransactions: 32,
-    escrowBalance: "₹125,300",
-    status: "pending",
-  },
-]
-
 export function RetailerList({ onViewTransactions }: RetailerListProps) {
+  const [retailerData, setRetailerData] = useState<any[]>([]);
+
+  useEffect(() => {
+    apiGet("/api/retailers/list", true).then((data) => {
+      setRetailerData(Array.isArray(data) ? data : []);
+    });
+  }, []);
+
   return (
     <div className="space-y-4">
       {retailerData.map((retailer) => (
